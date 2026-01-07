@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="scriptsheet" href="./script.js" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="Thanh_cong_cụ">
+      <div class="left">
+        <strong>Welcome To Do List</strong>
+      </div>
+      <div class="trung_tâm">
+        <input
+          id="tìm_kiếm"
+          placeholder="Tìm task ở đây...."
+          oninput="searchTask()"
+        />
+        <div class="right">
+          <button onclick="login()">Đăng nhập</button>
+          <button onclick="toggletheme()">🌙</button>
+          <button onclick="fontSmall()">A-</button>
+          <button onclick="fontBig()">A+</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

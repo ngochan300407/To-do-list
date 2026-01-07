@@ -1,0 +1,33 @@
+body {
+  background: #f6f0d7;
+}
+h1 {
+  color: #18230f;
+  text-align: center;
+  font-size: 40px;
+}
+.Thanh_cong_cụ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #18230f;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+}
+.Thanh_cong_cụ input {
+  padding: 5px;
+}
+.Thanh_cong_cụ button {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.left {
+  font-size: 30px;
+}
+.trung_tâm {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
