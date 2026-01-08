@@ -1,5 +1,5 @@
 body {
-  background: #f6f0d7;
+  background: #fffbeb;
 }
 h1 {
   color: #18230f;
@@ -10,7 +10,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #18230f;
+  background: #0c0127;
   padding: 10px;
   color: white;
   font-size: 20px;
@@ -30,4 +30,37 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.Duoi_Thanh_Cong_Cụ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  color: #f6f5f8;
+  background: #c2d4f4;
+  gap: 300px;
+}
+.Hoc_tap-box {
+  background: #0c0127;
+  color: white;
+  margin: 20px 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+.Daily_box {
+  background: #0c0127;
+  color: white;
+  margin: 20px 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+.Goal_box {
+  background: #0c0127;
+  color: white;
+  margin: 20px 20px;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+a {
+  text-decoration: none;
 }
