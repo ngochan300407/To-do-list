@@ -42,10 +42,32 @@
         <a href="Work.html" class="Work_box">Công Việc</a>
       </div>
     </div>
-    <div class="Take_Note">
-      <h2>Ghi Chú</h2>
-      <textarea placeholder="Hãy take note vào đây....."></textarea>
-      <button>Lưu ghi chú</button>
+    <div class="Content_Giua">
+      <div class="Take_Note">
+        <h2>Ghi Chú</h2>
+        <textarea
+          id="noteInput"
+          placeholder="Hãy take note vào đây....."
+        ></textarea>
+        <button id="saveNoteBtn">Lưu ghi chú</button>
+      </div>
+      <div class="Tổng_Task">
+        <h3>Tổng task tuần này</h3>
+        <div class="task-item">📝 Tổng task: <span id="totalTask">0</span></div>
+        <div class="task-item">✔️ Hoàn thành: <span id="doneTask">0</span></div>
+        <div class="task-item">
+          ⏳ Chưa xong: <span id="pendingTask">0</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+      </div>
     </div>
+    <div class="Note_List">
+      <h3>Note List</h3>
+      <div id="noteList" class="Note_List"></div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
