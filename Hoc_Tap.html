@@ -17,14 +17,6 @@
           placeholder="Tìm task ở đây...."
           oninput="searchTask()"
         />
-        <div class="right2">
-          <button onclick="login()">Đăng nhập</button>
-          <button onclick="toggletheme()">🌙</button>
-        </div>
-        <div class="To_nho2">
-          <button onclick="fontSmall()">A-</button>
-          <button onclick="fontBig()">A+</button>
-        </div>
       </div>
     </div>
     <div class="Duoi_Thanh_Cong_Cụ2">
@@ -44,5 +36,27 @@
         <a href="Work.html" class="Work_box2">Công Việc</a>
       </div>
     </div>
+    <h2>Thời Khóa Biểu</h2>
+    <table id="tkbTable">
+      <thead>
+        <tr>
+          <th>Giờ</th>
+          <th>Thứ 2</th>
+          <th>Thứ 3</th>
+          <th>Thứ 4</th>
+          <th>Thứ 5</th>
+          <th>Thứ 6</th>
+          <th>Thứ 7</th>
+          <th>Chủ Nhật</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Hàng giờ sẽ tạo bằng JS -->
+      </tbody>
+    </table>
+
+    <button id="resetBtn">Reset toàn bộ</button>
+
+    <script src="script_m.js"></script>
   </body>
 </html>
