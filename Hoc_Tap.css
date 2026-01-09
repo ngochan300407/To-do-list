@@ -24,6 +24,7 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding: 20px;
 }
 .Duoi_Thanh_Cong_Cụ2 {
   display: flex;
@@ -124,18 +125,47 @@ a {
 a {
   text-decoration: none;
 }
-.To_Nho2 {
-  background: white;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 10px 10px;
-  border-radius: 15px;
-}
-.right2 {
-  gap: 40px;
-}
+
 .left2 {
   text-shadow: 0 0 18px #a289ef, 0 0 20px #8486cf, 0 0 40px #00eaff,
     0 0 80px #9490d4;
+}
+h2 {
+  background: #35476c;
+  width: 530px;
+  padding: 10px 10px;
+  height: 20px;
+  text-align: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 0px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px; /* chữ nhỏ hơn */
+  text-align: center;
+  width: 490px;
+}
+
+th,
+td {
+  border: 1px solid #333;
+  padding: 4px; /* giảm padding */
+  min-width: 60px; /* ô hẹp hơn */
+  height: 25px;
+}
+
+td {
+  cursor: pointer;
+}
+
+td:focus {
+  outline: 1px solid #007bff;
+}
+
+button {
+  margin-top: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
 }
