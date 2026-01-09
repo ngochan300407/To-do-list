@@ -24,6 +24,7 @@
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding: 20px;
 }
 .Duoi_Thanh_Cong_Cụ2 {
   display: flex;
@@ -124,17 +125,7 @@ a {
 a {
   text-decoration: none;
 }
-.To_Nho2 {
-  background: white;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 10px 10px;
-  border-radius: 15px;
-}
-.right2 {
-  gap: 40px;
-}
+
 .left2 {
   text-shadow: 0 0 18px #a289ef, 0 0 20px #8486cf, 0 0 40px #00eaff,
     0 0 80px #9490d4;

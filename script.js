@@ -29,21 +29,14 @@ function renderNotes() {
 
 saveBtn.addEventListener("click", () => {
   const text = noteInput.value.trim();
-  if (text === "") return;
+  if (!text) return;
 
-  const now = new Date();
-  const dateString = now.toLocaleString("vi-VN");
-
-  const newNote = {
-    text: text,
-    date: dateString,
-  };
-
-  notes.push(newNote);
+  const date = new Date().toLocaleString("vi-VN");
+  notes.push({ text, date });
   localStorage.setItem("notes", JSON.stringify(notes));
 
   noteInput.value = "";
   renderNotes();
 });
 
-renderNotes();
+window.onload = renderNotes;

@@ -32,6 +32,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding: 20px;
 }
 .Duoi_Thanh_Cong_Cụ2 {
   display: flex;
@@ -132,14 +133,7 @@ a {
 a {
   text-decoration: none;
 }
-.To_Nho2 {
-  background: white;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 10px 10px;
-  border-radius: 15px;
-}
+
 .right2 {
   gap: 40px;
 }
@@ -155,12 +149,12 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: #414e5f;
+  background-color: #bfd6f4;
   padding: 15px;
-
+  box-shadow: 0 0 15px black;
   margin-top: 30px;
   text-align: center;
-  color: #efeef3;
+  color: #080123;
   flex: 0.5;
 }
 .Take_Note button {
@@ -175,8 +169,8 @@ a {
   overflow-y: auto;
   max-height: 300px;
   padding-right: 4px;
-  background: #414e5f;
-  color: white;
+  background: #bfd6f4;
+  color: rgb(5, 1, 23);
   text-align: center;
   height: 300px;
 }
@@ -201,8 +195,8 @@ a {
 }
 .Tổng_Task {
   flex: 1;
-  background: #0c0127;
-  color: white;
+  background: #b2c2f0;
+  color: rgb(3, 0, 11);
   padding: 20px;
   border-radius: 12px;
 }
