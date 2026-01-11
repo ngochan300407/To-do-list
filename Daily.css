@@ -71,22 +71,6 @@
     0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-.Goal_box2 {
-  background: #12013b;
-  color: white;
-  margin: 20px 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-.Goal_box2:hover {
-  background: #1d0b6e;
-  transform: scale(1.12) translateY(-10px);
-  box-shadow: 0 0 15px rgba(109, 93, 252, 0.8), 0 0 30px rgba(109, 93, 252, 0.6),
-    0 20px 40px rgba(0, 0, 0, 0.5);
-}
 .Work_box2 {
   background: #12013b;
   color: white;
@@ -129,4 +113,82 @@ a {
 .left2 {
   text-shadow: 0 0 18px #a289ef, 0 0 20px #8486cf, 0 0 40px #00eaff,
     0 0 80px #9490d4;
+}
+.sheet {
+  max-width: 400px;
+  margin-top: 10px;
+  background: rgb(211, 208, 250);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+h2 {
+  text-align: center;
+  color: #6130b0;
+}
+
+.add-task {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.add-task button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #250b62;
+  color: rgb(253, 249, 249);
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+}
+
+li input[type="text"] {
+  flex: 1;
+  border: none;
+  border-bottom: 1px dashed #ccc;
+}
+
+li button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.Daily_List {
+  background: rgb(208, 210, 250);
+  width: 400px;
+  height: 400px;
+  flex: 1;
+}
+h3 {
+  text-align: center;
+  color: #6130b0;
+  font-size: 30px;
+}
+.Content_1 {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  align-items: flex-start;
 }
