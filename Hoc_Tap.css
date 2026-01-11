@@ -71,22 +71,6 @@
     0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-.Goal_box2 {
-  background: #12013b;
-  color: white;
-  margin: 20px 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-.Goal_box2:hover {
-  background: #1d0b6e;
-  transform: scale(1.12) translateY(-10px);
-  box-shadow: 0 0 15px rgba(109, 93, 252, 0.8), 0 0 30px rgba(109, 93, 252, 0.6),
-    0 20px 40px rgba(0, 0, 0, 0.5);
-}
 .Work_box2 {
   background: #12013b;
   color: white;
@@ -143,16 +127,18 @@ h2 {
 table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 12px; /* chữ nhỏ hơn */
+  font-size: 12px;
   text-align: center;
   width: 490px;
+  background: #f5fafd;
+  box-shadow: 0 0 15px black;
 }
 
 th,
 td {
   border: 1px solid #333;
-  padding: 4px; /* giảm padding */
-  min-width: 60px; /* ô hẹp hơn */
+  padding: 4px;
+  min-width: 60px;
   height: 25px;
 }
 
@@ -168,4 +154,121 @@ button {
   margin-top: 10px;
   padding: 4px 8px;
   font-size: 12px;
+  width: 40px;
+}
+.Chinh_Giua {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.TKBBox {
+  flex: 2;
+}
+
+.TKBBox table {
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.TKBBox th,
+.TKBBox td {
+  border: 1px solid #333;
+  padding: 4px;
+  min-width: 60px;
+  height: 85px;
+}
+
+.TKBBox td {
+  cursor: pointer;
+}
+
+.TKBBox td:focus {
+  outline: 1px solid #007bff;
+}
+
+button {
+  margin-top: 5px;
+  padding: 4px 8px;
+  font-size: 12px;
+  width: 100px;
+}
+
+.TaskBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.TaskBox ul {
+  list-style: none;
+  padding: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+
+  background: #f7f8ff;
+  border: 1px solid #aeb8f6;
+  border-radius: 12px;
+}
+
+.TaskBox li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 14px;
+  margin-bottom: 10px;
+
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #021321;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.progress-box {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #cde6f9;
+  border: 1px solid #f1f2fa;
+  width: 400px;
+}
+
+.progress-box p {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 16px;
+  background: #f6f6f8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #010724, #030379);
+  transition: width 0.3s ease;
+}
+
+#progressText {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  text-align: right;
+  font-weight: bold;
+}
+p {
+  color: rgb(6, 1, 30);
+}
+.LeftColumn {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
