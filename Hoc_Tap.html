@@ -26,9 +26,7 @@
       <div class="Học_Tập2">
         <a href="Hoc_Tap.html" class="Hoc_tap-box2">Học Tập</a>
       </div>
-      <div class="Goal2">
-        <a href="Goal.html" class="Goal_box2">Mục Tiêu</a>
-      </div>
+
       <div class="Daily_routine2">
         <a href="Daily.html" class="Daily_box2">Daily Routine</a>
       </div>
@@ -37,26 +35,32 @@
       </div>
     </div>
     <h2>Thời Khóa Biểu</h2>
-    <table id="tkbTable">
-      <thead>
-        <tr>
-          <th>Giờ</th>
-          <th>Thứ 2</th>
-          <th>Thứ 3</th>
-          <th>Thứ 4</th>
-          <th>Thứ 5</th>
-          <th>Thứ 6</th>
-          <th>Thứ 7</th>
-          <th>Chủ Nhật</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Hàng giờ sẽ tạo bằng JS -->
-      </tbody>
-    </table>
-
-    <button id="resetBtn">Reset toàn bộ</button>
-
+    <div class="Chinh_Giua">
+      <table id="tkbTable">
+        <thead>
+          <tr>
+            <th>Giờ</th>
+            <th>Thứ 2</th>
+            <th>Thứ 3</th>
+            <th>Thứ 4</th>
+            <th>Thứ 5</th>
+            <th>Thứ 6</th>
+            <th>Thứ 7</th>
+            <th>Chủ Nhật</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="resetBtn">Reset</button>
+     <div class="TaskBox">
+  <h2>Task List</h2>
+  <div class="task-input">
+    <input type="text" id="taskInput" placeholder="Nhập task" />
+    <button id="addTaskBtn">Thêm</button>
+  </div>
+  <ul id="taskList"></ul>
+  <button id="resetTaskBtn">Reset Tasks</button>
+</div>
     <script src="script_m.js"></script>
   </body>
 </html>
