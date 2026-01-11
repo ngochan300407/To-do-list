@@ -36,31 +36,41 @@
     </div>
     <h2>Thời Khóa Biểu</h2>
     <div class="Chinh_Giua">
-      <table id="tkbTable">
-        <thead>
-          <tr>
-            <th>Giờ</th>
-            <th>Thứ 2</th>
-            <th>Thứ 3</th>
-            <th>Thứ 4</th>
-            <th>Thứ 5</th>
-            <th>Thứ 6</th>
-            <th>Thứ 7</th>
-            <th>Chủ Nhật</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      <button id="resetBtn">Reset</button>
-     <div class="TaskBox">
-  <h2>Task List</h2>
-  <div class="task-input">
-    <input type="text" id="taskInput" placeholder="Nhập task" />
-    <button id="addTaskBtn">Thêm</button>
-  </div>
-  <ul id="taskList"></ul>
-  <button id="resetTaskBtn">Reset Tasks</button>
-</div>
+      <div class="LeftColumn">
+        <table id="tkbTable">
+          <thead>
+            <tr>
+              <th>Giờ</th>
+              <th>Thứ 2</th>
+              <th>Thứ 3</th>
+              <th>Thứ 4</th>
+              <th>Thứ 5</th>
+              <th>Thứ 6</th>
+              <th>Thứ 7</th>
+              <th>Chủ Nhật</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button id="resetBtn">Reset</button>
+        <div class="progress-box">
+          <p>Tiến độ hoàn thành Task</p>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span id="progressText">0%</span>
+        </div>
+      </div>
+      <div class="TaskBox">
+        <h2>Task List</h2>
+        <div class="task-input">
+          <input type="text" id="taskInput" placeholder="Nhập task" />
+          <button id="addTaskBtn">Thêm</button>
+        </div>
+        <ul id="taskList"></ul>
+        <button id="resetTaskBtn">Reset Tasks</button>
+      </div>
+    </div>
     <script src="script_m.js"></script>
   </body>
 </html>
