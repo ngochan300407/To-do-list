@@ -1,92 +1,126 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
-const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-
+const jwt = require("jsonwebtoken");
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const SECRET = "todosecret";
-let users = [];
-let notes = {};
-let tasks = {};
-let tkb = {};
+mongoose.connect("mongodb://127.0.0.1:27017/todolist");
+
+const User = mongoose.model(
+  "User",
+  new mongoose.Schema({
+    username: String,
+    password: String,
+  })
+);
+
+const Note = mongoose.model(
+  "Note",
+  new mongoose.Schema({
+    userId: String,
+    text: String,
+    date: String,
+  })
+);
+
+const Task = mongoose.model(
+  "Task",
+  new mongoose.Schema({
+    userId: String,
+    text: String,
+    done: Boolean,
+  })
+);
+
+const TKB = mongoose.model(
+  "TKB",
+  new mongoose.Schema({
+    userId: String,
+    data: Object,
+  })
+);
+
+const SECRET = "TODOLIST_SECRET";
+
 function auth(req, res, next) {
   const token = req.headers.authorization;
-  if (!token) return res.status(401).json({ message: "No token" });
+  if (!token) return res.sendStatus(401);
 
   try {
-    const user = jwt.verify(token, SECRET);
-    req.user = user;
+    const data = jwt.verify(token, SECRET);
+    req.userId = data.id;
     next();
   } catch {
-    res.status(401).json({ message: "Invalid token" });
+    res.sendStatus(401);
   }
 }
 
 app.post("/api/register", async (req, res) => {
   const { username, password } = req.body;
-  if (users.find((u) => u.username === username))
+
+  if (await User.findOne({ username }))
     return res.json({ message: "User đã tồn tại" });
 
   const hash = await bcrypt.hash(password, 10);
-  users.push({ username, password: hash });
+  await User.create({ username, password: hash });
+
   res.json({ message: "Đăng ký thành công" });
 });
 
 app.post("/api/login", async (req, res) => {
   const { username, password } = req.body;
-  const user = users.find((u) => u.username === username);
-  if (!user) return res.json({ message: "Sai tài khoản" });
+
+  const user = await User.findOne({ username });
+  if (!user) return res.json({});
 
   const ok = await bcrypt.compare(password, user.password);
-  if (!ok) return res.json({ message: "Sai mật khẩu" });
+  if (!ok) return res.json({});
 
-  const token = jwt.sign({ username }, SECRET);
+  const token = jwt.sign({ id: user._id }, SECRET);
   res.json({ token });
 });
-app.get("/api/notes", auth, (req, res) => {
-  res.json(notes[req.user.username] || []);
+
+app.get("/api/notes", auth, async (req, res) => {
+  const notes = await Note.find({ userId: req.userId });
+  res.json(notes);
 });
 
-app.post("/api/notes", auth, (req, res) => {
-  if (!notes[req.user.username]) notes[req.user.username] = [];
-  const n = { id: Date.now(), ...req.body };
-  notes[req.user.username].push(n);
-  res.json(n);
+app.post("/api/notes", auth, async (req, res) => {
+  const note = await Note.create({
+    userId: req.userId,
+    text: req.body.text,
+    date: req.body.date,
+  });
+  res.json(note);
 });
 
-app.delete("/api/notes/:id", auth, (req, res) => {
-  notes[req.user.username] = (notes[req.user.username] || []).filter(
-    (n) => n.id != req.params.id
-  );
-  res.json({ ok: true });
-});
-app.get("/api/tasks", auth, (req, res) => {
-  res.json(tasks[req.user.username] || []);
-});
-
-app.post("/api/tasks", auth, (req, res) => {
-  tasks[req.user.username] = req.body;
+app.delete("/api/notes/:id", auth, async (req, res) => {
+  await Note.deleteOne({ _id: req.params.id, userId: req.userId });
   res.json({ ok: true });
 });
 
-app.delete("/api/tasks", auth, (req, res) => {
-  tasks[req.user.username] = [];
-  res.json({ ok: true });
-});
-app.get("/api/tkb", auth, (req, res) => {
-  res.json(tkb[req.user.username] || {});
+app.get("/api/tasks", auth, async (req, res) => {
+  const tasks = await Task.find({ userId: req.userId });
+  res.json(tasks);
 });
 
-app.post("/api/tkb", auth, (req, res) => {
-  tkb[req.user.username] = req.body;
+app.post("/api/tasks", auth, async (req, res) => {
+  await Task.deleteMany({ userId: req.userId });
+  await Task.insertMany(req.body.map((t) => ({ ...t, userId: req.userId })));
   res.json({ ok: true });
 });
-
-app.delete("/api/tkb", auth, (req, res) => {
-  tkb[req.user.username] = {};
+app.get("/api/tkb", auth, async (req, res) => {
+  const t = await TKB.findOne({ userId: req.userId });
+  res.json(t ? t.data : {});
+});
+app.post("/api/tkb", auth, async (req, res) => {
+  await TKB.deleteMany({ userId: req.userId });
+  await TKB.create({ userId: req.userId, data: req.body });
   res.json({ ok: true });
 });
-app.listen(3000, () => console.log("Backend http://localhost:3000"));
+app.listen(3000, () => {
+  console.log("Mongo Backend running at http://localhost:3000");
+});

@@ -42,12 +42,17 @@
           <input id="newTask" type="text" placeholder="Nhập task mới..." />
           <button onclick="addTask()">+</button>
         </div>
-
-        <ul id="taskList"></ul>
       </div>
+      <div class="progress-bar">
+        <div class="progress" id="dailyProgress"></div>
+      </div>
+      <div id="dailyPercent">0%</div>
       <div class="Daily_List">
         <h3>Sinh Hoạt</h3>
+        <ul id="dailyList"></ul>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
