@@ -79,22 +79,6 @@ h1 {
     0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-.Goal_box2 {
-  background: #12013b;
-  color: white;
-  margin: 20px 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-.Goal_box2:hover {
-  background: #1d0b6e;
-  transform: scale(1.12) translateY(-10px);
-  box-shadow: 0 0 15px rgba(109, 93, 252, 0.8), 0 0 30px rgba(109, 93, 252, 0.6),
-    0 20px 40px rgba(0, 0, 0, 0.5);
-}
 .Work_box2 {
   background: #12013b;
   color: white;
