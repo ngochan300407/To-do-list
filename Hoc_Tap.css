@@ -222,11 +222,16 @@ button {
   padding: 12px 14px;
   margin-bottom: 10px;
 
-  background: white;
+  background: rgb(250, 250, 250);
   border-radius: 12px;
   border: 1px solid #021321;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
+.TaskBox li.done span {
+  text-decoration: line-through;
+  color: #0c0223;
+}
+
 .progress-box {
   margin-top: 15px;
   padding: 12px;
