@@ -41,6 +41,7 @@ const Daily = {
       li.innerHTML = `
         <input type="checkbox" ${task.done ? "checked" : ""}>
         <span>${task.text}</span>
+        <button class="delete-daily">❌</button>
       `;
 
       const checkbox = li.querySelector("input");
@@ -49,7 +50,13 @@ const Daily = {
         this.save();
         this.render();
       };
+      const delBtn = li.querySelector(".delete-daily");
 
+      delBtn.onclick = () => {
+        this.tasks.splice(i, 1);
+        this.save();
+        this.render();
+      };
       if (task.done) li.style.textDecoration = "line-through";
       list.appendChild(li);
     });
