@@ -61,11 +61,15 @@ function renderTasks() {
       <span>${task.text}</span>
       <button class="delete-task">❌</button>
     `;
-
+    if (task.done) {
+      li.classList.add("done");
+    } else {
+      li.classList.remove("done");
+    }
     li.querySelector("input").onchange = (e) => {
       tasks[index].done = e.target.checked;
       saveTasks();
-      updateProgress();
+      renderTasks();
     };
 
     li.querySelector(".delete-task").onclick = () => {
