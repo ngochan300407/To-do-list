@@ -6,7 +6,7 @@ const progressFill = document.getElementById("progressFill");
 const progressText = document.getElementById("progressText");
 
 let tasks = [];
-const TASK_API = "http://localhost:3000/api/tasks";
+const TASK_API = "http://localhost:3000/api/tasks?type=study";
 
 function authHeader() {
   return {
