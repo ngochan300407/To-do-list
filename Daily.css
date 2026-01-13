@@ -176,10 +176,10 @@ li button {
   font-size: 16px;
 }
 .Daily_List {
-  background: rgb(208, 210, 250);
-  width: 400px;
+  background: rgb(213, 201, 247);
+  width: 500px;
   height: 400px;
-  flex: 1;
+  flex: 2;
 }
 h3 {
   text-align: center;
@@ -188,7 +188,51 @@ h3 {
 }
 .Content_1 {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   padding: 40px;
   align-items: flex-start;
+}
+.Bên_trái {
+  width: 400px;
+}
+
+#dailyPercent {
+  margin-top: 6px;
+  text-align: right;
+  font-weight: bold;
+}
+.progress-box2 {
+  margin-top: 40px;
+  background: #cdc2f1;
+  padding: 15px;
+  border-radius: 16px;
+  height: 60px;
+}
+
+.progress-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #001b44;
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar2 {
+  flex: 1;
+  height: 14px;
+  background: #2d0467;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress2 {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0b0f5b, #05023a);
+  border-radius: 10px;
+  transition: 0.4s;
 }
