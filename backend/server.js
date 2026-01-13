@@ -32,6 +32,7 @@ const Task = mongoose.model(
     userId: String,
     text: String,
     done: Boolean,
+    type: String,
   })
 );
 
@@ -103,13 +104,24 @@ app.delete("/api/notes/:id", auth, async (req, res) => {
 });
 
 app.get("/api/tasks", auth, async (req, res) => {
-  const tasks = await Task.find({ userId: req.userId });
+  const { type } = req.query;
+  const tasks = await Task.find({ userId: req.userId, type });
   res.json(tasks);
 });
 
 app.post("/api/tasks", auth, async (req, res) => {
-  await Task.deleteMany({ userId: req.userId });
-  await Task.insertMany(req.body.map((t) => ({ ...t, userId: req.userId })));
+  const { type } = req.query;
+
+  await Task.deleteMany({ userId: req.userId, type });
+
+  await Task.insertMany(
+    req.body.map((t) => ({
+      ...t,
+      userId: req.userId,
+      type,
+    }))
+  );
+
   res.json({ ok: true });
 });
 app.get("/api/tkb", auth, async (req, res) => {
