@@ -156,24 +156,50 @@ ul {
   padding: 0;
 }
 
-li {
+#dailyList {
+  list-style: none;
+  padding: 10px;
+}
+
+#dailyList li {
+  background: white;
+  border: 2px solid #b8b2ff;
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 0;
+  justify-content: space-between;
 }
 
-li input[type="text"] {
+#dailyList li input {
+  width: 20px;
+  height: 20px;
+  accent-color: #c03ad1;
+}
+
+#dailyList li span {
   flex: 1;
-  border: none;
-  border-bottom: 1px dashed #ccc;
+  text-align: center;
+  font-size: 18px;
+  color: #2d1765;
 }
 
-li button {
-  border: none;
-  background: none;
+.delete-daily {
+  background: #f3f3f3;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 18px;
+  color: hotpink;
   cursor: pointer;
-  font-size: 16px;
+  transition: 0.2s;
+}
+
+.delete-daily:hover {
+  background: #ffd6e8;
+  transform: scale(1.1);
 }
 .Daily_List {
   background: rgb(213, 201, 247);
