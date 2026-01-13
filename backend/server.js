@@ -102,7 +102,6 @@ app.delete("/api/notes/:id", auth, async (req, res) => {
   await Note.deleteOne({ _id: req.params.id, userId: req.userId });
   res.json({ ok: true });
 });
-
 app.get("/api/tasks", auth, async (req, res) => {
   const { type } = req.query;
   const tasks = await Task.find({ userId: req.userId, type });
