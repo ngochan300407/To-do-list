@@ -158,17 +158,18 @@ button {
 }
 .Chinh_Giua {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: flex-start;
 }
 
 .TKBBox {
-  flex: 2;
+  flex: 3;
+  width: 600px;
 }
 
 .TKBBox table {
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 20px;
   text-align: center;
   width: 100%;
 }
@@ -200,7 +201,7 @@ button {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .TaskBox ul {
@@ -208,20 +209,19 @@ button {
   padding: 10px;
   max-height: 400px;
   overflow-y: auto;
-
+  height: 400px;
   background: #f7f8ff;
   border: 1px solid #aeb8f6;
   border-radius: 12px;
+  overflow: auto;
 }
 
 .TaskBox li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 12px 14px;
   margin-bottom: 10px;
-
   background: rgb(250, 250, 250);
   border-radius: 12px;
   border: 1px solid #021321;
@@ -229,16 +229,17 @@ button {
 }
 .TaskBox li.done span {
   text-decoration: line-through;
-  color: #0c0223;
+  color: #0c011c;
 }
 
 .progress-box {
-  margin-top: 15px;
+  margin-top: 10px;
   padding: 12px;
   border-radius: 12px;
-  background: #cde6f9;
-  border: 1px solid #f1f2fa;
+  background: #e0e5f6;
+  border: 1px solid #000210;
   width: 400px;
+  margin-left: 50px;
 }
 
 .progress-box p {
@@ -257,7 +258,7 @@ button {
 .progress-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #010724, #030379);
+  background: linear-gradient(90deg, #000519, #044966);
   transition: width 0.3s ease;
 }
 
@@ -269,7 +270,7 @@ button {
   font-weight: bold;
 }
 p {
-  color: rgb(6, 1, 30);
+  color: rgb(0, 0, 17);
 }
 .LeftColumn {
   width: 60%;
