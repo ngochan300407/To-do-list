@@ -118,3 +118,54 @@ if (localStorage.getItem("token")) {
 } else {
   loginBox.style.display = "flex";
 }
+const quotes = [
+  "Hôm nay cố gắng, ngày mai đỡ mệt.",
+  "Bạn không cần giỏi ngay, chỉ cần không bỏ cuộc.",
+  "Một chút tiến bộ mỗi ngày tạo nên kỳ tích.",
+  "Không ai thành công nhờ trì hoãn.",
+  "Làm xong còn hơn làm hoàn hảo.",
+  "Mệt cũng được, bỏ cuộc thì không.",
+  "Bạn đang đi đúng hướng, đừng dừng lại.",
+  "Kỷ luật hôm nay = tự do ngày mai.",
+  "Học tập là khoản đầu tư không bao giờ lỗ.",
+  "Đừng so sánh, hãy tiến bộ.",
+];
+
+function getToday() {
+  return new Date().toDateString();
+}
+
+function randomQuote() {
+  return quotes[Math.floor(Math.random() * quotes.length)];
+}
+
+function setQuote(text) {
+  localStorage.setItem("motivationDate", getToday());
+  localStorage.setItem("motivationQuote", text);
+  const el = document.getElementById("motivationText");
+  if (el) el.innerText = text;
+}
+
+function showMotivation() {
+  const savedDate = localStorage.getItem("motivationDate");
+  const savedQuote = localStorage.getItem("motivationQuote");
+
+  if (savedDate === getToday() && savedQuote) {
+    const el = document.getElementById("motivationText");
+    if (el) el.innerText = savedQuote;
+  } else {
+    const newQuote = randomQuote();
+    setQuote(newQuote);
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  showMotivation();
+
+  const btn = document.getElementById("changeQuoteBtn");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const newQuote = randomQuote();
+      setQuote(newQuote);
+    });
+  }
+});
