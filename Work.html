@@ -34,5 +34,29 @@
         <a href="Work.html" class="Work_box2">Công Việc</a>
       </div>
     </div>
+    <div class="Content_1">
+      <div class="Bên_trái">
+        <div class="sheet">
+          <h2>📝 Task For You</h2>
+
+          <div class="add-task">
+            <input id="newTask" type="text" placeholder="Nhập task mới..." />
+            <button onclick="Daily.add()">+</button>
+          </div>
+        </div>
+        <div class="progress-box2">
+          <div class="progress-title">Tiến độ hoàn thành Task</div>
+
+          <div class="circle-progress" id="circleProgress">
+            <span id="workPercent">0%</span>
+          </div>
+        </div>
+      </div>
+      <div class="Work_List">
+        <h3>Việc cần làm</h3>
+        <ul id="workList"></ul>
+      </div>
+    </div>
+    <script src="script_i.js"></script>
   </body>
 </html>
