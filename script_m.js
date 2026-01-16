@@ -33,7 +33,7 @@ function saveTasks() {
 }
 
 function resetTasksBackend() {
-  fetch(TASK_API, {
+  return fetch(TASK_API, {
     method: "DELETE",
     headers: authHeader(),
   });
@@ -91,15 +91,12 @@ addTaskBtn.onclick = () => {
   saveTasks();
   renderTasks();
 };
-
-resetTaskBtn.onclick = () => {
-  if (confirm("Reset toàn bộ tasks?")) {
-    tasks = [];
-    resetTasksBackend();
-    renderTasks();
-  }
+resetTaskBtn.onclick = async () => {
+  if (!confirm("Reset toàn bộ tasks?")) return;
+  await resetTasksBackend();
+  tasks = [];
+  renderTasks();
 };
-
 const tableBody = document.querySelector("#tkbTable tbody");
 const resetBtn = document.getElementById("resetBtn");
 const hours = [
