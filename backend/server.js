@@ -123,6 +123,16 @@ app.post("/api/tasks", auth, async (req, res) => {
 
   res.json({ ok: true });
 });
+app.delete("/api/tasks", auth, async (req, res) => {
+  const { type } = req.query;
+
+  await Task.deleteMany({
+    userId: req.userId,
+    type,
+  });
+
+  res.json({ ok: true });
+});
 app.get("/api/tkb", auth, async (req, res) => {
   const t = await TKB.findOne({ userId: req.userId });
   res.json(t ? t.data : {});
