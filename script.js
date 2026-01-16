@@ -169,3 +169,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+function loadTaskSummary() {
+  Promise.all([
+    fetch(API + "/api/tasks?type=daily", { headers: authHeaders() }).then((r) =>
+      r.json()
+    ),
+    fetch(API + "/api/tasks?type=study", { headers: authHeaders() }).then((r) =>
+      r.json()
+    ),
+    fetch(API + "/api/tasks?type=work", { headers: authHeaders() }).then((r) =>
+      r.json()
+    ),
+  ]).then(([daily, study, work]) => {
+    const tasks = [...daily, ...study, ...work];
+
+    const total = tasks.length;
+    const done = tasks.filter((t) => t.done).length;
+    const pending = total - done;
+
+    document.getElementById("totalTask").innerText = total;
+    document.getElementById("doneTask").innerText = done;
+    document.getElementById("pendingTask").innerText = pending;
+
+    const percent = total === 0 ? 0 : Math.round((done / total) * 100);
+    document.getElementById("progress").style.width = percent + "%";
+  });
+}
+loadNotes();
+loadTaskSummary();
+if (localStorage.getItem("token")) {
+  loadNotes();
+  loadTaskSummary();
+}
